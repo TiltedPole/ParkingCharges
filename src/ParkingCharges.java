@@ -11,7 +11,7 @@ public class ParkingCharges {
     public static double CalculatePrice(double hours) throws ParkingChargesExceptionHandler{
         double fee = 2.00;
 
-        if (hours < 0 || hours > 24.00){
+        if (hours <= 0 || hours > 24.00){
             throw new ParkingChargesExceptionHandler("Invalid hours.");
         }else if(hours > 0 && hours < 3){
             return fee;

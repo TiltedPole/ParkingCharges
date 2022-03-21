@@ -87,4 +87,21 @@ public class ParkingCharges_test extends TestCase{
             assertEquals("Invalid hours.", e.getMessage());
         }
     }
+
+    // Test Number: 7
+    // Objective: Error is displayed.
+    // Input(s): Hours: 0
+    // Expected Output: "Invalid Hours"
+    public void testParkingCharges007(){
+        double result = 0.00;
+        ParkingCharges testObj = new ParkingCharges();
+
+        try{
+            result = testObj.CalculatePrice(0);
+            fail("No exception.");
+
+        } catch (ParkingChargesExceptionHandler e) {
+            assertEquals("Invalid hours.", e.getMessage());
+        }
+    }
 }
