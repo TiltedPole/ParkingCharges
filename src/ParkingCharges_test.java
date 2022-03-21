@@ -65,7 +65,7 @@ public class ParkingCharges_test extends TestCase{
     public void testParkingCharges005(){
         try{
             ParkingCharges testObj = new ParkingCharges();
-            assertEquals(5.00, testObj.CalculatePrice(9.25));
+            assertEquals(5.00, testObj.CalculatePrice(8.25));
         } catch (ParkingChargesExceptionHandler e) {
             fail("Error");
         }

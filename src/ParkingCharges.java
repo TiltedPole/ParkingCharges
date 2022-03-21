@@ -16,7 +16,7 @@ public class ParkingCharges {
         }else if(hours > 0 && hours < 3){
             return fee;
         }else{
-            fee += (0.50 * (Math.round(hours) - 3));
+            fee += (0.50 * (Math.ceil(hours) - 3));
 
             if (fee >= 10.00){
                 fee = 10.00;
