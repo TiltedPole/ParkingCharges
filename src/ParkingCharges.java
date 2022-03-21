@@ -8,13 +8,16 @@ Implement a method that calculates the parking charges for a customer based on t
 
 public class ParkingCharges {
 
-    public static double CalculatePrice(int hours) throws ParkingChargesExceptionHandler{
+    public static double CalculatePrice(double hours) throws ParkingChargesExceptionHandler{
         double fee = 2.00;
 
-        if (hours < 3 && hours > 24){
+        if (hours < 0 || hours > 24.00){
             throw new ParkingChargesExceptionHandler("Invalid hours.");
+        }else if(hours > 0 && hours < 3){
+            return fee;
         }else{
-            fee += (0.50 * (hours - 3));
+            fee += (0.50 * (Math.round(hours) - 3));
+
             if (fee >= 10.00){
                 fee = 10.00;
             }
